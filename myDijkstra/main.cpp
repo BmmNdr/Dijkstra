@@ -19,32 +19,6 @@ Ripeto il processo fino che la lista dei nodi e' vuota.
 */
 
 void main() {
-	
-	/*
-	//All the nodes in the graph
-	Node* nodeA = new Node("A");
-	Node* nodeB = new Node("B");
-	Node* nodeC = new Node("C");
-	Node* nodeD = new Node("D");
-	vector<Node*> nodes {nodeA, nodeB , nodeC ,nodeD };
-	//All the connection between nodes in the graph
-	vector<Edge> edges;
-
-	//		    1
-	//		A ----- B
-	//		|       |
-	//	  4 |       | 1
-	//		|       |
-	//		D ----- C
-	//          1
-	
-	edges.push_back(Edge(nodeA, nodeB, 1));
-	edges.push_back(Edge(nodeB, nodeC, 1));
-	edges.push_back(Edge(nodeC, nodeD, 1));
-	edges.push_back(Edge(nodeD, nodeA, 4));
-	nodeA->distFromOrigin = 0;
-	*/
-	
 	Node* nodeA = new Node("A");
 	Node* nodeB = new Node("B");
 	Node* nodeC = new Node("C");
@@ -70,9 +44,9 @@ void main() {
 	Dijkstra(nodes, edges);
 
 	for (int i = 0; i < nodes.size(); i++)
-	{
 		cout << "Node " << nodes.at(i)->id << " Dist " << nodes.at(i)->distFromOrigin << endl;
-	}
+
+	cout << nodes.at(nodes.size() - 1)->printPrec();
 }
 
 void Dijkstra(vector<Node*> &nodes, vector<Edge> edges) {
@@ -98,6 +72,7 @@ void Dijkstra(vector<Node*> &nodes, vector<Edge> edges) {
 
 				if (w < endNode->distFromOrigin) {
 					endNode->distFromOrigin = w;
+					endNode->prec = visitingNode;
 					queue.push_back(endNode);
 				}
 			}

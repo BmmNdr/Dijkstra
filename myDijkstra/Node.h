@@ -8,8 +8,10 @@ public:
 	//Node previous;
 	int distFromOrigin;
 	string id;
+	Node* prec;
 
 	Node();
 	Node(string id);
+	string printPrec();
 };
 
