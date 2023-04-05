@@ -1,0 +1,6 @@
+﻿  Edge.cpp
+  Node.cpp
+  main.cpp
+C:\Users\Andrea\Desktop\S\Dijkstra\myDijkstra\main.cpp(21,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...
+  myDijkstra.vcxproj -> C:\Users\Andrea\Desktop\S\Dijkstra\x64\Debug\myDijkstra.exe
